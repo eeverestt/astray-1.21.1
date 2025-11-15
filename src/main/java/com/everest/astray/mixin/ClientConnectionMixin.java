@@ -20,10 +20,9 @@ public class ClientConnectionMixin {
     @Inject(method = "disconnect(Lnet/minecraft/network/DisconnectionInfo;)V", at = @At("HEAD"))
     private void endMusic(DisconnectionInfo disconnectionInfo, CallbackInfo ci) {
         if(this.side == NetworkSide.CLIENTBOUND) {
-            System.out.println("disconnected on clinet");
-
             if (DynamicMusicHandler.active != null) {
                 DynamicMusicHandler.active.stop();
+                DynamicMusicHandler.active = null;
             }
         }
     }

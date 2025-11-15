@@ -1,6 +1,5 @@
 package com.everest.astray.music;
 
-import com.ibm.icu.util.ICUCloneNotSupportedException;
 import de.keksuccino.melody.resources.audio.MelodyAudioException;
 import de.keksuccino.melody.resources.audio.SimpleAudioFactory;
 import de.keksuccino.melody.resources.audio.SimpleAudioFactory.SourceType;

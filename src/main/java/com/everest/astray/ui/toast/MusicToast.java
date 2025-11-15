@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class MusicToast implements Toast {
 
-    private static final Identifier TEXTURE = Identifier.of("astray", "textures/gui/toast_music.png");
+    private static final Identifier TEXTURE = Identifier.of("astray", "textures/gui/music.png");
     private static final int HEIGHT = 32;
 
     private final Text title;

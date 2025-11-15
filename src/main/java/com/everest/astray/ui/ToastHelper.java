@@ -1,5 +1,6 @@
 package com.everest.astray.ui;
 
+import com.everest.astray.ui.toast.ErrorToast;
 import com.everest.astray.ui.toast.MusicToast;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.toast.SystemToast;
@@ -32,6 +33,14 @@ public class ToastHelper {
 
     public static void showMusicToast(String title) {
         MusicToast.show(title, null);
+    }
+
+    public static void showErrorToast(String title, String message) {
+        ErrorToast.show(title, message);
+    }
+
+    public static void showErrorToast(String title) {
+        ErrorToast.show(title, null);
     }
 }
 

@@ -1,11 +1,13 @@
 package com.everest.astray;
 
 import com.everest.astray.entity.RiftEntity;
+import com.everest.astray.gson.PlayerDataHandler;
 import com.everest.astray.init.AstrayEntities;
-import de.keksuccino.melody.Melody;
-import de.keksuccino.melody.resources.audio.SimpleAudioFactory;
+import com.everest.astray.world.IslandChunkGenerator;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class Astray implements ModInitializer {
@@ -13,8 +15,12 @@ public class Astray implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        PlayerDataHandler.init();
+
         AstrayEntities.init();
         FabricDefaultAttributeRegistry.register(AstrayEntities.RIFT_ENTITY_TYPE, RiftEntity.setAttributes());
+
+        //Registry.register(Registries.CHUNK_GENERATOR, id("islands"), IslandChunkGenerator.CODEC);
     }
 
     public static Identifier id(String s) {
