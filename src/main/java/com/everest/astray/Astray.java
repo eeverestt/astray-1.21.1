@@ -10,8 +10,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import java.util.logging.Logger;
+
 public class Astray implements ModInitializer {
     public static final String MODID = "astray";
+    public static final Logger LOGGER = Logger.getLogger(MODID);
 
     @Override
     public void onInitialize() {

@@ -1,14 +1,4 @@
 {
   "vertex": "veil:blit_screen",
-  "fragment": "astray:black_hole",
-  "textures": {
-    "NoiseTexture": {
-      "type": "location",
-      "location": "astray:textures/shader/noise/noise1.png"
-    },
-    "DistortTexture": {
-      "type": "location",
-      "location": "astray:textures/shader/distort/distort1.png"
-    }
-  }
+  "fragment": "astray:black_hole"
 }

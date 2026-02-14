@@ -11,8 +11,8 @@ import net.minecraft.client.MinecraftClient;
 @Environment(EnvType.CLIENT)
 public class SwapMusicTestCommand {
 
-    private static final DynamicMusicHandler trackA = new DynamicMusicHandler();
-    private static final DynamicMusicHandler trackB = new DynamicMusicHandler();
+    private static DynamicMusicHandler trackA = new DynamicMusicHandler();
+    private static DynamicMusicHandler trackB = new DynamicMusicHandler();
     private static boolean usingA = true;
     private static boolean loaded = false;
 
@@ -25,8 +25,8 @@ public class SwapMusicTestCommand {
                         client.execute(() -> {
                             try {
                                 if (!loaded) {
-                                    trackA.load("astray:music/obstructed-vision-chill.ogg", SimpleAudioFactory.SourceType.RESOURCE_LOCATION).join();
-                                    trackB.load("astray:music/obstructed-vision-battle.ogg", SimpleAudioFactory.SourceType.RESOURCE_LOCATION).join();
+                                    trackA = MusicLoader.getHandler("astray:music/obstructed-vision-chill.ogg");
+                                    trackB = MusicLoader.getHandler("astray:music/obstructed-vision-battle.ogg");
                                     loaded = true;
                                 }
 

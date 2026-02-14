@@ -20,7 +20,7 @@ public class RadiusMusicHandler {
 
         MinecraftClient.getInstance().execute(() -> {
             try {
-                comaTrack.load("astray:music/high.ogg", SimpleAudioFactory.SourceType.RESOURCE_LOCATION).join();
+                comaTrack = MusicLoader.getHandler("astray:music/high.ogg");
                 loaded = true;
             } catch (Exception e) {
                 e.printStackTrace();

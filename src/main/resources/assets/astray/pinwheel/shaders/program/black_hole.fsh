@@ -3,7 +3,6 @@
 
 uniform sampler2D DiffuseSampler0;
 uniform sampler2D DiffuseDepthSampler;
-uniform sampler2D Noise;
 
 uniform vec3 pos;
 uniform float timer;
@@ -11,21 +10,6 @@ uniform float GameTime;
 
 in vec2 texCoord;
 out vec4 fragColor;
-
-float depthSampleToWorldDepth(float depthSample) {
-    float f = depthSample * 2.0 - 1.0;
-    return 2.0 * VeilCamera.NearPlane * VeilCamera.FarPlane /
-    (VeilCamera.FarPlane + VeilCamera.NearPlane -
-    f * (VeilCamera.FarPlane - VeilCamera.NearPlane));
-}
-
-vec3 viewPosFromDepth(float depth, vec2 uv) {
-    float z = depth * 2.0 - 1.0;
-    vec4 positionCS = vec4(uv * 2.0 - 1.0, z, 1.0);
-    vec4 positionVS = VeilCamera.IProjMat * positionCS;
-    positionVS /= positionVS.w;
-    return positionVS.xyz;
-}
 
 void main() {
     vec3 baseColor = texture(DiffuseSampler0, texCoord).rgb;
